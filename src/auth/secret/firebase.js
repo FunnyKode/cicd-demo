@@ -38,4 +38,4 @@ const app = doc !== undefined ? firebase.initializeApp({
 //     appId: process.env.REACT_APP_FIREBASE_APP_ID,
 // });
 
-// export default app
+export default app
