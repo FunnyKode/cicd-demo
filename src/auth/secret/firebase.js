@@ -9,18 +9,18 @@ let doc
 console.log(doc)
 try {
     doc = yaml.load(fs.readFileSync('../../../.github/workflows/main.yml', 'utf-8'));
-    console.log('nini', (doc.jobs.sets.env))
+    console.log('nini', (doc.jobs.sets.steps[1].env))
 } catch (error) {
     console.log('errors', error)
 }
 
 const app = doc !== undefined ? firebase.initializeApp({
-    apiKey: doc.jobs.sets.env.REACT_APP_FIREBASE_KEY,
-    authDomain: doc.jobs.sets.env.REACT_APP_FIREBASE_DOMAIN,
-    projectId: doc.jobs.sets.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: doc.jobs.sets.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: doc.jobs.sets.env.REACT_APP_FIREBASE_SENDER_ID,
-    appId: doc.jobs.sets.env.REACT_APP_FIREBASE_APP_ID,
+    apiKey: doc.jobs.sets.steps[1].env.REACT_APP_FIREBASE_KEY,
+    authDomain: doc.jobs.sets.steps[1].env.REACT_APP_FIREBASE_DOMAIN,
+    projectId: doc.jobs.sets.steps[1].env.REACT_APP_FIREBASE_PROJECT_ID,
+    storageBucket: doc.jobs.sets.steps[1].env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+    messagingSenderId: doc.jobs.sets.steps[1].env.REACT_APP_FIREBASE_SENDER_ID,
+    appId: doc.jobs.sets.steps[1].env.REACT_APP_FIREBASE_APP_ID,
 }) : firebase.initializeApp({
     apiKey: process.env.REACT_APP_FIREBASE_KEY,
     authDomain: process.env.REACT_APP_FIREBASE_DOMAIN,
@@ -38,4 +38,4 @@ const app = doc !== undefined ? firebase.initializeApp({
 //     appId: process.env.REACT_APP_FIREBASE_APP_ID,
 // });
 
-export default app
+// export default app
