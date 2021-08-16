@@ -1,22 +1,21 @@
 import React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { AuthProvider } from './auth/Auth';
+import Home from './components/Home';
+import PrivateRoute from "./components/auth/PrivateRoute";
+import Start from "./components/Start";
+import Login from "./components/auth/Login";
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-          Hello David tu vas bien?
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <AuthProvider>
+      <BrowserRouter>
+        <Switch>
+          <PrivateRoute exact path="/" component={Home} />
+          <Route path="/login" component={Login} />
+          <Route path="/start" component={Start} />
+        </Switch>
+      </BrowserRouter>
+    </AuthProvider>
   );
 }
 
