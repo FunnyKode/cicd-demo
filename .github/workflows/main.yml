@@ -10,6 +10,15 @@ on:
     # branches: [ master ]
 
 jobs:
+  sets:
+    runs-on: ubuntu-latest
+    env:
+      REACT_APP_FIREBASE_KEY : ${{ environments.REACT_APP_FIREBASE_KEY }} 
+      REACT_APP_FIREBASE_DOMAIN : ${{ environments.REACT_APP_FIREBASE_DOMAIN }} 
+      REACT_APP_FIREBASE_PROJECT_ID : ${{ environments.REACT_APP_FIREBASE_PROJECT_ID }} 
+      REACT_APP_FIREBASE_STORAGE_BUCKET : ${{ environments.REACT_APP_FIREBASE_STORAGE_BUCKET }} 
+      REACT_APP_FIREBASE_SENDER_ID : ${{ environments.REACT_APP_FIREBASE_SENDER_ID }} 
+      REACT_APP_FIREBASE_APP_ID : ${{ environments.REACT_APP_FIREBASE_APP_ID }} 
   build:
 
     runs-on: ubuntu-latest

@@ -127,4 +127,4 @@ yarn-debug.log*
 yarn-error.log*
 
 # secret
-/src/auth/secret/firebase.js*
+src/auth/secret/firebase.js*
