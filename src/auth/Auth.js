@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 export const AuthProvider = ({ children }) => {
     const [currentUser, setCurrentUser] = useState(null);
     const [pending, setPending] = useState(true);
-// je suis là
+// je suis là on direai
     useEffect(() => {
         app.auth().onAuthStateChanged(user => {
             setCurrentUser(user);
