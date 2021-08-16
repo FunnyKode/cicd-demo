@@ -1,7 +1,9 @@
 import React from 'react';
 import app from '../auth/secret/firebase';
 import { Link, Route, Switch } from 'react-router-dom';
-import Start from './Start'
+import Start from './Start';
+import axios from 'axios';
+// import "Fuse" from 'fuse.js';
 
 const Home = () => {
     return (

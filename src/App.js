@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { AuthProvider } from './auth/Auth';
 import Home from './components/Home';
 import PrivateRoute from "./components/auth/PrivateRoute";
@@ -9,11 +9,11 @@ function App() {
   return (
     <AuthProvider>
       <BrowserRouter>
-        <div>
+        <Switch>
           <PrivateRoute exact path="/" component={Home} />
           <Route path="/login" component={Login} />
-          <Route path="/start" component={Start}/>
-        </div>
+          <Route path="/start" component={Start} />
+        </Switch>
       </BrowserRouter>
     </AuthProvider>
   );
